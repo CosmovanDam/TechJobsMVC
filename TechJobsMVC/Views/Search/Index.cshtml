@@ -28,6 +28,42 @@
 
     @{
         //TODO #4: Loop over the search results to display all job fields.
+
+        // The first time this loads, ViewBag.jobs is null so this conditional will ignore it,
+        // however the second time it is loaded ViewBag.jobs will be populated and then appear
     }
+    @if (ViewBag.jobs != null) {
+        @foreach (var item in ViewBag.jobs)
+        {
+            <table class="job-listing">
+                <tr>
+                    <td>ID:</td>
+                    <td>@item.Id</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>@item.Name</td>
+                </tr>
+                <tr>
+                    <td>Employer:</td>
+                    <td>@item.Employer</td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>@item.Location</td>
+                </tr>
+                <tr>
+                    <td>Position Type:</td>
+                    <td>@item.PositionType</td>
+                </tr>
+                <tr>
+                    <td>Skill:</td>
+                    <td>@item.CoreCompetency</td>
+                </tr>
+            </table>
+        }
+    }
+
+
 
 </div>
